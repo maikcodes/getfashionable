@@ -1,0 +1,30 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'getfashionable/css/layouts.css' %}">
+    <link rel="stylesheet" href="{% static 'getfashionable/css/buttons.css' %}">
+    <link rel="icon" href="{% static 'getfashionable/icons/favicon.svg' %}" type="image/svg+xml">
+    <title>{% block head_title %}Get Fashionable{% endblock %}</title>
+    {% block specific_style %} {% endblock %}
+</head>
+
+<body class="main-container">
+    <header>
+        {% block search_header %} {% endblock %}
+    </header>
+    <main>
+        {% block content %} {% endblock %}
+    </main>
+    <footer>
+        <p>some footer</p>
+    </footer>
+
+    {% block specific_script %} {% endblock %}
+</body>
+
+</html>

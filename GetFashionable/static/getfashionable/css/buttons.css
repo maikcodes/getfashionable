@@ -1,0 +1,43 @@
+.content-centered {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.rounded-button {
+  display: inline-block;
+  overflow: hidden;
+  width: 45px;
+  height: 45px;
+}
+
+.rounded-image {
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+}
+
+.button-link {
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 25px;
+}
+
+.button-text {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.icon-link {
+  display: inline-block;
+}
+
+.icon-link > a > svg {
+  fill: var(--shamrock-400);
+}
+
+.icon-link:hover > a > svg {
+  fill: var(--shamrock-500);
+}

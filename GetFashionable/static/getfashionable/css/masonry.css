@@ -1,0 +1,34 @@
+.image-gallery-container {
+  margin: 0;
+  padding: 0;
+}
+
+.image-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 20px;
+  margin: 0 auto;
+}
+
+.image-item {
+  width: 230px;
+  border-radius: 25px;
+  background-color: var(--ship-gray-200);
+  object-fit: cover;
+  transition: transform 0.2s;
+  margin-bottom: 20px;
+}
+
+.image-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 25px;
+  object-fit: cover;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.image-item:hover {
+  filter: grayscale(40%);
+  box-shadow: 5px 5px 5px var(--ship-gray-100);
+}
