@@ -7,7 +7,7 @@
 }
 
 .rounded-button {
-  display: inline-block;
+  display: block;
   overflow: hidden;
   width: 45px;
   height: 45px;

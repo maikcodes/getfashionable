@@ -1,0 +1,48 @@
+.publication-detail-container {
+  padding: 0 50px;
+  width: 80%;
+}
+
+.publication-image-container {
+  padding: 10px 5px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.publication-image {
+  background-color: var(--ship-gray-200);
+  box-shadow: 5px 5px 5px var(--ship-gray-400);
+}
+
+.publication-profile-link {
+  padding-top: 10px;
+}
+
+.publication-profile-link a {
+  text-decoration: none;
+}
+
+.publication-profile-link a:visited {
+  text-decoration: underline;
+  color: var(--ship-gray-800);
+}
+
+.publication-details-container {
+  height: 100%;
+  width: 80%;
+  padding: 20px;
+}
+
+.publication-description {
+  padding: 10px 0;
+  text-align: center;
+}
+.publication-description p {
+  background-color: var(--ship-gray-100);
+  border-radius: 25px;
+  padding: 5px 10px;
+}
+
+.publication-card {
+  padding: 20px;
+}
