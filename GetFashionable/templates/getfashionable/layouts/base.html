@@ -53,7 +53,8 @@
                 {% if user.is_authenticated %}
                 <div class="content-centered">
                     <a href="#" class="rounded-button">
-                        <img class="rounded-image" src="{% static 'getfashionable/images/user.jpg' %}" alt="">
+                        <!-- <img class="rounded-image" src="{% static 'getfashionable/images/user.jpg' %}" alt=""> -->
+                        <img class="rounded-image" src="{{user.userimage.image.url}}" alt="">
                     </a>
                     <a href="{% url 'getfashionable:logout' %}">logout</a>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="32" heigh="32">

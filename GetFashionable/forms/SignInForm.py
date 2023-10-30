@@ -1,4 +1,3 @@
-from typing import Any
 from django.contrib.auth.forms import AuthenticationForm
 
 

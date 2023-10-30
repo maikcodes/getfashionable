@@ -1,5 +1,7 @@
+from django.contrib.auth import login
 from django.urls import reverse_lazy
 from django.views import generic
+
 from ...forms import SignUpForm
 from ...models import UserImage
 
@@ -16,5 +18,7 @@ class SignUp(generic.CreateView):
             user_image = UserImage(
                 user=self.object, image=self.request.FILES.get('user_image'))
             user_image.save()
+
+        login(self.request, self.object)
 
         return response
