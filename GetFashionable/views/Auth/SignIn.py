@@ -47,6 +47,7 @@ class SignIn(generic.View):
                 messages.error(request, 'form is not valid')
 
         self.context = {
-            'form': SignInForm()
+            'form': SignInForm(),
+            'show_header': False
         }
         return render(request, self.template_name, self.context)

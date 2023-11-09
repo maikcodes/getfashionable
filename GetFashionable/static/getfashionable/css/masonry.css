@@ -26,9 +26,11 @@
   border-radius: 25px;
   object-fit: cover;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  /* box-shadow: 0 5px 6px var(--ship-gray-1000); */
 }
 
 .image-item:hover {
   filter: grayscale(40%);
   box-shadow: 5px 5px 5px var(--ship-gray-100);
+  /* box-shadow: 5px 5px 5px var(--ship-gray-1000); */
 }

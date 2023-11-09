@@ -17,8 +17,8 @@ class Publications(View):
                     'height': 100,
                     'width': 100,
                     'url': image_url
-                }
-
+                },
             },
+            'show_header': True,
         }
         return render(request, 'getfashionable/pages/publication_detail.html', context)

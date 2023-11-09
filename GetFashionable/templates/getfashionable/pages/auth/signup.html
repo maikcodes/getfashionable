@@ -1,17 +1,82 @@
-<h2>Sign up</h2>
-<form method="post" enctype="multipart/form-data">
-  {% csrf_token %}
-  {% for field in form %}
-  <p>
-    {{ field.label_tag }}<br>
-    {{ field }}
-    {% if field.help_text %}
-    <small style="color: grey">{{ field.help_text }}</small>
-    {% endif %}
-    {% for error in field.errors %}
-  <p style="color: red">{{ error }}</p>
-  {% endfor %}
-  </p>
-  {% endfor %}
-  <button type="submit">Sign up</button>
-</form>
+{% extends "getfashionable/layouts/base.html" %}
+
+{% load static %}
+
+{% block head_title %}
+Signup
+{% endblock %}
+
+
+{% block content %}
+
+<div class="content-centered">
+  <div class="border-container shadow">
+
+    <form method="post" enctype="multipart/form-data">
+
+      {% csrf_token %}
+
+      {% for field in form %}
+
+      {% if not forloop.last %}
+
+      <div class="row">
+
+        <div class="col-4">
+          <div class="form-label">
+            {{ field.label_tag }}
+          </div>
+        </div>
+
+        <div class="col-8">
+          <div class="form-input-text">
+            {{ field }}
+          </div>
+
+          {% for error in field.errors %}
+          <p class="form-errors">{{ error }}</p>
+          {% endfor %}
+        </div>
+      </div>
+
+      {% endif %}
+
+      {% if forloop.last %}
+
+      <div class="row">
+
+        <div class="col-4">
+          <div class="form-label">
+            {{ form.user_image.label_tag }}
+          </div>
+        </div>
+
+        <div class="col-8">
+          <div>
+            {{ form.user_image }}
+          </div>
+
+          {% for error in field.errors %}
+          <p class="form-errors">{{ error }}</p>
+          {% endfor %}
+        </div>
+      </div>
+
+      {% endif %}
+
+      {% endfor %}
+      <div class="row">
+        <br />
+        <div class="content-centered">
+          <button class="button-primary" type="submit">Sign up</button>
+        </div>
+      </div>
+
+    </form>
+
+  </div>
+</div>
+</div>
+
+
+{% endblock %}

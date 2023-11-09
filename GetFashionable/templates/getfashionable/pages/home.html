@@ -2,7 +2,9 @@
 
 {% load static %}
 
-{% block head_title %}Home{% endblock %}
+{% block head_title %}
+Home
+{% endblock %}
 
 
 {% block specific_style %}
@@ -12,6 +14,7 @@
 {% block content %}
 <div class="image-gallery-container">
     <div class="image-gallery">
+
         {% for image in images %}
         <a href="{% url 'getfashionable:publication_detail' 1 %}">
             <div class="image-item">
@@ -19,6 +22,7 @@
             </div>
         </a>
         {% endfor %}
+
     </div>
 </div>
 {% endblock %}

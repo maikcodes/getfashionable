@@ -21,7 +21,8 @@ class Profile(generic.View):
         }
 
         context = {
-            'user': user_params,
+            'profile_user': user_params,
+            'show_header': True,
         }
         print(context)
         return render(request, 'getfashionable/pages/user/profile.html', context)

@@ -1,5 +1,52 @@
-<form method="post">
-    {% csrf_token %}
-    {{ form }}
-    <button type="submit">Login</button>
-</form>
+{% extends "getfashionable/layouts/base.html" %}
+
+{% load static %}
+
+{% block head_title %}
+Login
+{% endblock %}
+
+
+{% block content %}
+
+<div class="content-centered">
+    <div class="color-border-container shadow">
+
+        <form method="post">
+
+            {% csrf_token %}
+
+            {% for field in form %}
+
+            <div class="row">
+
+                <div class="form-label">
+                    {{ field.label_tag }}
+                </div>
+
+                <div class="form-input-text">
+                    {{ field }}
+                </div>
+
+                {% for error in field.errors %}
+                <p class="form-errors">{{ error }}</p>
+                {% endfor %}
+
+            </div>
+
+            {% endfor %}
+
+
+            <div class="row">
+                <br />
+                <div class="content-centered">
+                    <button class="button-primary" type="submit">Login</button>
+                </div>
+            </div>
+
+        </form>
+
+    </div>
+</div>
+
+{% endblock %}

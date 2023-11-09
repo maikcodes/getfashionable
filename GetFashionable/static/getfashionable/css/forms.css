@@ -1,0 +1,28 @@
+.form-label {
+  padding: 10px 0px 5px 0px;
+}
+
+.form-input-text {
+  width: 100%;
+}
+
+.form-input-text > input {
+  padding: 10px 15px;
+  width: 100%;
+}
+
+.form-input-text > input {
+  border-radius: 25px;
+  width: auto;
+  border: 1px solid var(--ship-gray-200);
+}
+
+.form-input-text > input:focus {
+  outline: 1px solid var(--shamrock-400);
+}
+
+.form-errors {
+  padding: 2px 0 0 10px;
+  color: #ff1a47;
+  text-wrap: balance;
+}

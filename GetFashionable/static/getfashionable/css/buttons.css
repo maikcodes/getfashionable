@@ -11,6 +11,9 @@
   overflow: hidden;
   width: 45px;
   height: 45px;
+  border: 1.5px solid var(--purple-heart-500);
+  border-radius: 50%;
+  filter: drop-shadow(3px 5px 2px var(--ship-gray-300));
 }
 
 .rounded-image {
@@ -19,13 +22,31 @@
   height: 100%;
 }
 
-.button-link {
-  color: #fff;
-  padding: 10px 20px;
+[class*="link-button"] {
+  padding: 10px 25px;
   border-radius: 25px;
+  filter: drop-shadow(3px 5px 2px var(--ship-gray-300));
+  /* filter: drop-shadow(3px 5px 2px var(--ship-gray-1000)); */
 }
 
-.button-text {
+.link-button {
+  background-color: var(--purple-heart-500);
+}
+
+.link-button:hover {
+  background-color: var(--amethyst-500);
+}
+
+.link-button-secondary {
+  background-color: var(--ship-gray-400);
+}
+
+.link-button-secondary:hover {
+  background-color: var(--ship-gray-500);
+}
+
+.link-text {
+  color: var(--ship-gray-50);
   display: inline-block;
   vertical-align: middle;
 }
@@ -34,10 +55,26 @@
   display: inline-block;
 }
 
-.icon-link > a > svg {
-  fill: var(--shamrock-400);
+.icon-link-svg {
+  fill: var(--purple-heart-500);
+  filter: drop-shadow(3px 5px 2px var(--ship-gray-300));
+  /* filter: drop-shadow(3px 5px 2px var(--ship-gray-1000)); */
+  width: 50px;
+  height: auto;
 }
 
-.icon-link:hover > a > svg {
-  fill: var(--shamrock-500);
+.icon-link-svg:hover {
+  fill: var(--amethyst-500);
+}
+
+.button-primary {
+  padding: 10px 25px;
+  border-radius: 25px;
+  border-style: none;
+  color: var(--ship-gray-50);
+  background-color: var(--purple-heart-500);
+}
+
+.button-primary:hover {
+  background-color: var(--amethyst-500);
 }

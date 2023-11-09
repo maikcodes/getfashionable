@@ -1,0 +1,98 @@
+:root {
+  --dropdown-width: 160px;
+}
+
+.dropdown-options-button {
+  cursor: pointer;
+}
+
+.dropdown summary {
+  list-style: none;
+  list-style-type: none;
+}
+
+.dropdown {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+}
+
+.dropdown:hover {
+  background-color: var(--ship-gray-200);
+}
+
+.dropdown > summary::-webkit-details-marker {
+  display: none;
+}
+
+.dropdown summary:focus {
+  outline: none;
+}
+
+.dropdown summary:focus {
+  outline: none;
+}
+
+.dropdown ul {
+  position: absolute;
+  margin: 20px 0 0 0;
+  padding: 10px;
+  width: var(--dropdown-width);
+  margin-left: calc((var(--dropdown-width) / 2) * -0.8);
+  box-sizing: border-box;
+  z-index: 2;
+  background: var(--ship-gray-100);
+  border-radius: 15px;
+  list-style: none;
+}
+
+.dropdown ul li {
+  padding: 0;
+  margin: 0;
+}
+
+.dropdown ul li a:link,
+.dropdown ul li a:visited {
+  display: inline-block;
+  padding: 10px 0.8rem;
+  width: 100%;
+  box-sizing: border-box;
+  text-decoration: none;
+  color: var(--ship-gray-800);
+}
+
+.dropdown ul li a:hover {
+  border-radius: 15px;
+  background-color: var(--ship-gray-200);
+  color: var(--ship-gray-800);
+}
+
+/* Dropdown triangle */
+.dropdown ul::before {
+  content: " ";
+  position: absolute;
+  width: 0;
+  height: 0;
+  top: -10px;
+  left: 50%;
+  margin-left: -10px;
+  border-style: solid;
+  border-width: 0 10px 10px 10px;
+  border-color: transparent transparent var(--ship-gray-200) transparent;
+}
+
+/* Close the dropdown with outside clicks */
+.dropdown > summary::before {
+  display: none;
+}
+
+.dropdown[open] > summary::before {
+  content: " ";
+  display: block;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 1;
+}

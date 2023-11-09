@@ -8,5 +8,6 @@ class Home(View):
         images = get_mocked_images()
         context = {
             'images': images,
+            'show_header': True,
         }
         return render(request, 'getfashionable/pages/home.html', context)
