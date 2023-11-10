@@ -2,23 +2,37 @@
 
 <div class="content-centered">
 
-    <a href="{% url 'getfashionable:profile' user %}" class="rounded-button">
-        <img class="rounded-image" src="{{ user.userimage.image.url }}" alt="">
-    </a>
+    <div class="col-6">
+        <div class="content-centered">
+            <a href="{% url 'getfashionable:designs' %}" class="rounded-button-primary">
+                <span class="link-text"> + </span>
+            </a>
+        </div>
+    </div>
 
-    <details class="dropdown">
-        <summary role="button">
-            <svg class="dropdown-options-button" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                <path fill="currentColor"
-                    d="m11.3 14.3l-2.6-2.6q-.475-.475-.212-1.087T9.425 10h5.15q.675 0 .938.613T15.3 11.7l-2.6 2.6q-.15.15-.325.225T12 14.6q-.2 0-.375-.075T11.3 14.3Z" />
-            </svg>
-        </summary>
-        <ul>
-            <li><a href="{% url 'getfashionable:logout' %}">Logout</a></li>
-            <li><a href="{% url 'getfashionable:profile' user %}">View Profile</a></li>
-            <li><a href="">Settings</a></li>
-        </ul>
-    </details>
+
+    <div class="col-6">
+        <div class="content-centered">
+
+            <a href="{% url 'getfashionable:profile' user %}" class="rounded-button">
+                <img class="rounded-image" src="{{ user.userimage.image.url }}" alt="">
+            </a>
+
+            <details class="dropdown">
+                <summary role="button">
+                    <svg class="dropdown-options-button" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path fill="currentColor"
+                            d="m11.3 14.3l-2.6-2.6q-.475-.475-.212-1.087T9.425 10h5.15q.675 0 .938.613T15.3 11.7l-2.6 2.6q-.15.15-.325.225T12 14.6q-.2 0-.375-.075T11.3 14.3Z" />
+                    </svg>
+                </summary>
+                <ul>
+                    <li><a href="{% url 'getfashionable:logout' %}">Logout</a></li>
+                    <li><a href="{% url 'getfashionable:profile' user %}">View Profile</a></li>
+                    <li><a href="">Settings</a></li>
+                </ul>
+            </details>
+        </div>
+    </div>
 
 </div>
 

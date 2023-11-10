@@ -1,13 +1,31 @@
-from django.views import View
+from django.db.models import F, ExpressionWrapper, fields
 from django.shortcuts import render
+from django.views import View
+
 from ..mocks import get_mocked_images
+from ..models import Design
 
 
 class Home(View):
     def most_recent(request):
-        images = get_mocked_images()
+        images = Design.objects.all().order_by('-created_at')
+
+        image_info_list = []
+
+        for image in images:
+
+            image_info = {
+                'width': image.image_width,
+                'height': image.image_height,
+                'url': image.image.url or '',
+                'id': image.id
+            }
+            print(f'\n{image_info}\n')
+
+            image_info_list.append(image_info)
+
         context = {
-            'images': images,
+            'images': image_info_list,
             'show_header': True,
         }
         return render(request, 'getfashionable/pages/home.html', context)

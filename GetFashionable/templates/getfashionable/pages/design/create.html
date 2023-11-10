@@ -1,0 +1,84 @@
+{% extends "getfashionable/layouts/base.html" %}
+
+{% load static %}
+
+{% block head_title %}
+Publish design
+{% endblock %}
+
+
+{% block content %}
+
+{% if user.is_authenticated %}
+
+<div class="content-centered">
+    <div class="border-container shadow">
+
+        <form method="post" enctype="multipart/form-data">
+
+            {% csrf_token %}
+
+            {% for field in form %}
+
+            {% if not forloop.last %}
+
+
+            <div class="row">
+
+                <div class="form-label">
+                    {{ field.label_tag }}
+                </div>
+
+                <div class="form-input-text">
+                    {{ field }}
+                </div>
+
+                {% for error in field.errors %}
+                <p class="form-errors">{{ error }}</p>
+                {% endfor %}
+
+            </div>
+
+            {% endif %}
+
+            {% if forloop.last %}
+
+            <br />
+            <div class="row">
+                <div class="col-4">
+                    <div class="form-label">
+                        {{ form.image.label_tag }}
+                    </div>
+                </div>
+
+                <div class="col-8">
+                    <div>
+                        {{ form.image }}
+                    </div>
+
+                    {% for error in field.errors %}
+                    <p class="form-errors">{{ error }}</p>
+                    {% endfor %}
+                </div>
+            </div>
+
+            {% endif %}
+
+            {% endfor %}
+
+
+            <div class="row">
+                <br />
+                <div class="content-centered">
+                    <button class="button-primary" type="submit">Publish</button>
+                </div>
+            </div>
+
+        </form>
+
+    </div>
+</div>
+
+{% endif %}
+
+{% endblock %}

@@ -1,22 +1,27 @@
 from django.views import View
 from django.shortcuts import render
-from ..mocks import get_mock_image_url
+
+from ..models import Design, UserImage
 
 
 class Publications(View):
     def publication_detail(request, id):
-        image_url = get_mock_image_url(height=100, width=100)
+
+        design = Design.objects.get(id=id)
+        user = design.user
+        user_image = UserImage.objects.get(user=user)
+
         context = {
             'publication': {
                 'author': {
-                    'name': 'Lorem Ipsum',
-                    'image_url': 'getfashionable/images/user.jpg',
+                    'name': f'{user.first_name} {user.last_name}',
+                    'image_url': user_image.image.url,
                 },
-                'description': 'In this collection I put all of my creativity using retro colors for women and men night gallery 🔥.',
+                'description': design.name,
                 'image': {
-                    'height': 100,
-                    'width': 100,
-                    'url': image_url
+                    'height': design.image_height,
+                    'width': design.image_width,
+                    'url': design.image.url
                 },
             },
             'show_header': True,

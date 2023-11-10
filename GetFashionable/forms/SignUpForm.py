@@ -3,7 +3,6 @@ from django.contrib.auth.models import User
 
 from django import forms
 
-from ..models import UserImage
 
 class SignUpForm(UserCreationForm):
     user_image = forms.ImageField(required=False, help_text='Upload your profile photo')

@@ -16,7 +16,7 @@ Home
     <div class="image-gallery">
 
         {% for image in images %}
-        <a href="{% url 'getfashionable:publication_detail' 1 %}">
+        <a href="{% url 'getfashionable:publication_detail' image.id %}">
             <div class="image-item">
                 <img src="{{ image.url }}" alt="Image" width="{{ image.width }}" height="{{ image.height }}">
             </div>

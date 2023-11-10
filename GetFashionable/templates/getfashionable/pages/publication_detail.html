@@ -18,8 +18,8 @@ Publication
             <div class="col-8">
                 <div class="publication-image-container">
                     <div class="content-centered">
-                        <img class="publication-image" src="{{ publication.image.url }}" alt="" width="{{ publication.image.width }}"
-                            height="{{ publication.image.height}}">
+                        <img class="publication-image" src="{{ publication.image.url }}" alt=""
+                            width="{{ publication.image.width }}" height="{{ publication.image.height}}">
                     </div>
                 </div>
             </div>
@@ -29,22 +29,22 @@ Publication
 
                     <div class="content-centered">
                         <a href="#" class="rounded-button">
-                            <img class="rounded-image" src="{% static 'getfashionable/images/user.jpg' %}" alt=""
-                                width="60" height="60">
+                            <img class="rounded-image" src="{{ publication.author.image_url }}" alt="" width="60"
+                                height="60">
                         </a>
                     </div>
 
                     <div class="content-centered">
                         <div class="publication-profile-link">
                             <strong>
-                                <a href="#">{{publication.author.name}}</a>
+                                <a href="#">{{ publication.author.name }}</a>
                             </strong>
                         </div>
                     </div>
 
                     <div class="publication-description">
                         <p>
-                           {{ publication.description }}
+                            {{ publication.description }}
                         </p>
                     </div>
 
