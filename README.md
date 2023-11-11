@@ -1,4 +1,4 @@
-# GetFashionable 💎.
+# GetFashionable 💎
 
 ## About
 Welcome to GetFashionable, your go-to web app for showcasing your unique fashion designs to the world! 🌎 Express your creativity and style by uploading stunning images of your fashion creations.
