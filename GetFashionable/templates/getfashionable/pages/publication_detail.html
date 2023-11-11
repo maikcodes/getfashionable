@@ -11,24 +11,25 @@ Publication
 {% endblock %}
 
 {% block content %}
-<div class="content-centered">
+<div class="horizontal-center">
     <div class="publication-detail-container">
         <div class="row">
 
             <div class="col-8">
                 <div class="publication-image-container">
                     <div class="content-centered">
-                        <img class="publication-image" src="{{ publication.image.url }}" alt=""
-                            width="{{ publication.image.width }}" height="{{ publication.image.height}}">
+                        <img class="publication-image" src="{{ publication.image.url }}"
+                            alt="{{ publication.description }}" width="{{ publication.image.width }}"
+                            height="{{ publication.image.height}}">
                     </div>
                 </div>
             </div>
 
             <div class="col-4">
-                <div class="publication-card">
+                <div class="border-container">
 
                     <div class="content-centered">
-                        <a href="#" class="rounded-button">
+                        <a href="{% url 'getfashionable:profile' publication.author.username %}" class="rounded-button-large">
                             <img class="rounded-image" src="{{ publication.author.image_url }}" alt="" width="60"
                                 height="60">
                         </a>
@@ -37,7 +38,7 @@ Publication
                     <div class="content-centered">
                         <div class="publication-profile-link">
                             <strong>
-                                <a href="#">{{ publication.author.name }}</a>
+                                <a href="{% url 'getfashionable:profile' publication.author.username %}">{{ publication.author.name }}</a>
                             </strong>
                         </div>
                     </div>

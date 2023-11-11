@@ -14,6 +14,7 @@ class Publications(View):
         context = {
             'publication': {
                 'author': {
+                    'username': user.username,
                     'name': f'{user.first_name} {user.last_name}',
                     'image_url': user_image.image.url,
                 },

@@ -1,6 +1,7 @@
 from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
 from django.urls import reverse_lazy
+from django.shortcuts import render
 from django.views.generic.edit import CreateView
 
 from PIL import Image
@@ -16,7 +17,15 @@ class CreateDesign(CreateView):
     template_name = 'getfashionable/pages/design/create.html'
     form_class = CreateDesignForm
     success_url = reverse_lazy('getfashionable:home')
+    context = {}
 
+    def get(self, request):
+        self.context = {
+            'form': self.form_class,
+            'show_header': True,
+        }
+        return render(request, self.template_name, self.context)
+    
     def form_valid(self, form):
         user = self.request.user
 

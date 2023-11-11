@@ -9,73 +9,75 @@ Signup
 
 {% block content %}
 
-<div class="content-centered">
-  <div class="border-container shadow">
+<div class="background-color-container">
 
-    <form method="post" enctype="multipart/form-data">
+  <div class="content-centered">
+    <div class="color-border-container">
 
-      {% csrf_token %}
+      <form method="post" enctype="multipart/form-data">
 
-      {% for field in form %}
+        {% csrf_token %}
 
-      {% if not forloop.last %}
+        {% for field in form %}
 
-      <div class="row">
+        {% if not forloop.last %}
 
-        <div class="col-4">
-          <div class="form-label">
-            {{ field.label_tag }}
+        <div class="row">
+
+          <div class="col-4">
+            <div class="form-label">
+              {{ field.label_tag }}
+            </div>
+          </div>
+
+          <div class="col-8">
+            <div class="form-input-text">
+              {{ field }}
+            </div>
+
+            {% for error in field.errors %}
+            <p class="form-errors">{{ error }}</p>
+            {% endfor %}
           </div>
         </div>
 
-        <div class="col-8">
-          <div class="form-input-text">
-            {{ field }}
+        {% endif %}
+
+        {% if forloop.last %}
+
+        <div class="row">
+
+          <div class="col-4">
+            <div class="form-label">
+              {{ form.user_image.label_tag }}
+            </div>
           </div>
 
-          {% for error in field.errors %}
-          <p class="form-errors">{{ error }}</p>
-          {% endfor %}
-        </div>
-      </div>
+          <div class="col-8">
+            <div>
+              {{ form.user_image }}
+            </div>
 
-      {% endif %}
-
-      {% if forloop.last %}
-
-      <div class="row">
-
-        <div class="col-4">
-          <div class="form-label">
-            {{ form.user_image.label_tag }}
+            {% for error in field.errors %}
+            <p class="form-errors">{{ error }}</p>
+            {% endfor %}
           </div>
         </div>
 
-        <div class="col-8">
-          <div>
-            {{ form.user_image }}
+        {% endif %}
+
+        {% endfor %}
+        <div class="row">
+          <br />
+          <div class="content-centered">
+            <button class="button-primary" type="submit">Sign up</button>
           </div>
-
-          {% for error in field.errors %}
-          <p class="form-errors">{{ error }}</p>
-          {% endfor %}
         </div>
-      </div>
 
-      {% endif %}
+      </form>
 
-      {% endfor %}
-      <div class="row">
-        <br />
-        <div class="content-centered">
-          <button class="button-primary" type="submit">Sign up</button>
-        </div>
-      </div>
-
-    </form>
-
+    </div>
   </div>
-</div>
 </div>
 
 

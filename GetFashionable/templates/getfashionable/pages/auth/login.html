@@ -9,43 +9,45 @@ Login
 
 {% block content %}
 
-<div class="content-centered">
-    <div class="color-border-container shadow">
+<div class="background-color-container">
+    <div class="content-centered">
+        <div class="color-border-container">
 
-        <form method="post">
+            <form method="post">
 
-            {% csrf_token %}
+                {% csrf_token %}
 
-            {% for field in form %}
+                {% for field in form %}
 
-            <div class="row">
+                <div class="row">
 
-                <div class="form-label">
-                    {{ field.label_tag }}
+                    <div class="form-label">
+                        {{ field.label_tag }}
+                    </div>
+
+                    <div class="form-input-text">
+                        {{ field }}
+                    </div>
+
+                    {% for error in field.errors %}
+                    <p class="form-errors">{{ error }}</p>
+                    {% endfor %}
+
                 </div>
 
-                <div class="form-input-text">
-                    {{ field }}
-                </div>
-
-                {% for error in field.errors %}
-                <p class="form-errors">{{ error }}</p>
                 {% endfor %}
 
-            </div>
 
-            {% endfor %}
-
-
-            <div class="row">
-                <br />
-                <div class="content-centered">
-                    <button class="button-primary" type="submit">Login</button>
+                <div class="row">
+                    <br />
+                    <div class="content-centered">
+                        <button class="button-primary" type="submit">Login</button>
+                    </div>
                 </div>
-            </div>
 
-        </form>
+            </form>
 
+        </div>
     </div>
 </div>
 

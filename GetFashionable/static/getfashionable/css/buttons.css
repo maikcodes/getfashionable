@@ -1,16 +1,18 @@
-.content-centered {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 100%;
-}
-
 .rounded-button {
   display: block;
   overflow: hidden;
   width: 45px;
   height: 45px;
+  border: 1.5px solid var(--purple-heart-500);
+  border-radius: 50%;
+  box-shadow: 0 4px 6px var(--ship-gray-300);
+}
+
+.rounded-button-large {
+  display: block;
+  overflow: hidden;
+  width: 80px;
+  height: 80px;
   border: 1.5px solid var(--purple-heart-500);
   border-radius: 50%;
   box-shadow: 0 4px 6px var(--ship-gray-300);
@@ -28,6 +30,10 @@
   font-size: 30px;
   text-decoration: none;
   font-weight: bold;
+}
+
+.rounded-button-primary:hover {
+  background-color: var(--amethyst-500);
 }
 
 .rounded-image {

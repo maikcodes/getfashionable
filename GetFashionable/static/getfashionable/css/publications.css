@@ -1,17 +1,19 @@
 .publication-detail-container {
-  padding: 0 50px;
-  width: 80%;
+  justify-content: center;
+  width: 90%;
+  overflow: hidden;
 }
 
 .publication-image-container {
-  padding: 10px 5px;
-  width: 100%;
-  overflow: hidden;
+  padding: 0px 0px;
 }
 
 .publication-image {
   background-color: var(--ship-gray-200);
-  box-shadow: 5px 5px 5px var(--ship-gray-400);
+  box-shadow: var(--ship-gray-500) 0px 2px 4px,
+    var(--ship-gray-300) 0px 7px 13px -3px;
+  max-width: 80%;
+  height: auto;
 }
 
 .publication-profile-link {
@@ -27,22 +29,22 @@
   color: var(--ship-gray-800);
 }
 
-.publication-details-container {
-  height: 100%;
-  width: 80%;
-  padding: 20px;
-}
-
 .publication-description {
   padding: 10px 0;
   text-align: center;
 }
 .publication-description p {
-  background-color: var(--ship-gray-100);
+  background-color: var(--ship-gray-200);
   border-radius: 25px;
   padding: 5px 10px;
 }
 
 .publication-card {
+  /* background-color: var(--ship-gray-100); */
+  border-radius: 25px;
   padding: 20px;
+  height: 100%;
+  box-shadow: var(--ship-gray-300) 0px 1px 1px, var(--ship-gray-300) 0px 2px 2px,
+    var(--ship-gray-300) 0px 4px 4px, var(--ship-gray-300) 0px 8px 8px,
+    var(--ship-gray-300) 0px 16px 16px;
 }

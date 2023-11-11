@@ -1,5 +1,7 @@
 .form-label {
   padding: 10px 0px 5px 0px;
+  color: var(--ship-gray-50);
+  font-weight: bold;
 }
 
 .form-input-text {
@@ -7,14 +9,11 @@
 }
 
 .form-input-text > input {
-  padding: 10px 15px;
   width: 100%;
-}
-
-.form-input-text > input {
+  padding: 10px 15px;
   border-radius: 25px;
-  width: auto;
-  border: 1px solid var(--ship-gray-200);
+  background-color: var(--ship-gray-50);
+  border: 2px solid var(--purple-heart-500);
 }
 
 .form-input-text > input:focus {

@@ -25,16 +25,21 @@
 
 <body class="main-container">
     {% if show_header %}
+
     <header>
         {% include "getfashionable/layouts/header/header.html" %}
     </header>
-    {% endif %}
 
     <main class="main-content">
-        {% block content %} {% endblock %}
-    </main>
 
-    {% block specific_script %} {% endblock %}
+        {% else %}
+
+        <main class="main-content-full">
+            {% endif %}
+            {% block content %} {% endblock %}
+        </main>
+
+        {% block specific_script %} {% endblock %}
 
 </body>
 

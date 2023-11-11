@@ -1,7 +1,7 @@
 from django.urls import include, path
 
 from .views import Home, Publications
-from .views import User
+from .views import Profile
 from .views.Auth import SignUp, SignIn, SignOut
 from .views.Design import CreateDesign
 
@@ -14,5 +14,5 @@ urlpatterns = [
     path("logout/", SignOut.as_view(), name="logout"),
     path('designs/', CreateDesign.as_view(), name="designs"),
     path('<int:id>/', Publications.publication_detail, name='publication_detail'),
-    path('<str:username>/', User.Profile.as_view(), name="profile"),
+    path('<str:username>/', Profile.as_view(), name="profile"),
 ]

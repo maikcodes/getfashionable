@@ -17,8 +17,7 @@
   margin-bottom: 20px;
   overflow: hidden;
   box-shadow: var(--ship-gray-950) 0px 2px 4px,
-    var(--ship-gray-800) 0px 7px 13px -3px,
-    var(--ship-gray-700) 0px -3px 0px inset;
+    var(--ship-gray-800) 0px 7px 13px -3px;
 }
 
 .image-item img {
@@ -31,6 +30,5 @@
 .image-item:hover {
   border: 1.8px solid var(--purple-heart-500);
   box-shadow: var(--purple-heart-500) 0px 2px 4px,
-    var(--purple-heart-400) 0px 7px 13px -3px,
-    var(--purple-heart-300) 0px -3px 0px inset;
+    var(--purple-heart-400) 0px 7px 13px -3px;
 }
