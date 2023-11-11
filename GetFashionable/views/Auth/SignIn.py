@@ -23,27 +23,20 @@ class SignIn(generic.View):
 
     def post(self, request):
         if request.method == 'POST':
-            print(request.POST)
+
             form = SignInForm(request, data=request.POST)
             if form.is_valid():
                 username = form.cleaned_data.get('username')
                 password = form.cleaned_data.get('password')
 
                 user = authenticate(username=username, password=password)
-                
-                print('✅', user)
-                # user_image = UserImage.objects.get(user, user)
-                # user['user_image'] = user_image.image.url
-                # print('✅', user)
 
                 if user is not None:
                     login(request, user)
                     return redirect('getfashionable:home')
                 else:
-                    print(request, 'user is none')
                     messages.error(request, 'user is none')
             else:
-                print(request, 'form is not valid')
                 messages.error(request, 'form is not valid')
 
         self.context = {

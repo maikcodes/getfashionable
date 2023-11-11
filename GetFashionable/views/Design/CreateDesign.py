@@ -35,7 +35,7 @@ class CreateDesign(CreateView):
         if image_loaded.content_type.startswith('image'):
             image = Image.open(image_loaded)
             image_width, image_height = image.size
-
+            
             design = form.save(commit=False)
             design.image_width = image_width
             design.image_height = image_height
