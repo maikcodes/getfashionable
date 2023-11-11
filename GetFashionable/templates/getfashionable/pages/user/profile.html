@@ -3,40 +3,65 @@
 {% load static %}
 
 {% block head_title %}
-{{ user.username }}
+{{ profile_user.username }}
+{% endblock %}
+
+{% block specific_style %}
+<link rel="stylesheet" href="{% static 'getfashionable/css/masonry.css' %}">
 {% endblock %}
 
 {% block content %}
-<div class="content-centered">
-    <div class="row">
-        <div class="col-2">
-            <div class="content-centered">
-                <a href="#" class="rounded-button">
-                    <img class="rounded-image" src="{{ profile_user.image }}" alt="" width="60" height="60">
-                </a>
+<div class="horizontal-center">
+    <div class="card-color">
+        <div class="row">
+            <div class="col-5">
+                <div class="content-centered">
+                    <div class="image-rounded-container-xl">
+                        <img class="profile-image" src="{{ profile_user.image }}">
+                    </div>
+                </div>
             </div>
-            <div class="content-centered">
-                <div class="publication-profile-link">
-                    <strong>
-                        <a href="#">{{ profile_user.username }}</a>
-                    </strong>
+            <div class="col-7">
+                <div class="row">
+                    <p class="profile_text">{{ profile_user.username }}</p>
+                    <p class="profile_text">
+                        {{ profile_user.first_name }}
+                        {{ profile_user.last_name }}
+                    </p>
                 </div>
             </div>
         </div>
-        <div class="col-10">
-            <div>
-                <p>
-                    {{ profile_user.email }}
-                </p>
-            </div>
-            <div>
-                <p>
-                    {{ profile_user.first_name }} {{ profile_user.last_name }}
-                </p>
-            </div>
-        </div>
-
     </div>
-
 </div>
+
+<div class="card-vertical-padding">
+    <div class="image-gallery-container">
+        <div class="image-gallery">
+
+            {% if profile_user.designs|length == 0 %}
+
+            <div class="horizontal-center">
+                <p>This user does not upload designs yet</p>
+            </div>
+
+            {% else %}
+
+            {% for image in profile_user.designs %}
+            <a href="{% url 'getfashionable:publication_detail' image.id %}">
+                <div class="image-item">
+                    <img src="{{ image.url }}" alt="Image" width="{{ image.width }}" height="{{ image.height }}">
+                </div>
+            </a>
+            {% endfor %}
+
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block specific_script %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/4.2.2/masonry.pkgd.min.js"></script>
+<script src="{% static 'getfashionable/js/masonry.js' %}"></script>
 {% endblock %}

@@ -1,0 +1,36 @@
+.card-color {
+  width: 80%;
+  padding: 20px 20px;
+  background: linear-gradient(
+    125deg,
+    var(--purple-heart-400) 5%,
+    var(--purple-heart-800) 50%,
+    var(--purple-heart-950) 100%
+  );
+  border-radius: 25px;
+}
+
+.image-rounded-container-xl {
+  display: block;
+  overflow: hidden;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 1.5px solid var(--purple-heart-500);
+  box-shadow: 0 4px 6px var(--purple-heart-700);
+}
+
+.profile-image {
+  height: auto;
+  width: 100%;
+}
+
+.profile_text {
+  font-weight: bold;
+  color: var(--ship-gray-50);
+  font-size: 20px;
+}
+
+.card-vertical-padding {
+  padding: 20px 0;
+}

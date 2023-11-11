@@ -5,7 +5,7 @@ from django import forms
 
 
 class SignUpForm(UserCreationForm):
-    user_image = forms.ImageField(required=False, help_text='Upload your profile photo')
+    user_image = forms.ImageField(required=True, help_text='Upload your profile photo')
 
     class Meta:
         model = User

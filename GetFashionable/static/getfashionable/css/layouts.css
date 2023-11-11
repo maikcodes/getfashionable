@@ -84,6 +84,14 @@
   height: 100%;
 }
 
+.content-left {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  width: 100%;
+  height: 100%;
+}
+
 .vertical-center {
   display: flex;
   align-items: center;
@@ -167,7 +175,7 @@ body {
   padding: 20px 30px;
   border-radius: 25px;
   box-shadow: var(--ship-gray-500) 0px 2px 4px,
-  var(--ship-gray-300) 0px 7px 13px -3px;
+    var(--ship-gray-300) 0px 7px 13px -3px;
 }
 
 .color-border-container {
@@ -180,11 +188,10 @@ body {
 .background-color-container {
   width: 100%;
   height: 100%;
-  background: rgb(137, 89, 249);
   background: linear-gradient(
     125deg,
-    rgba(137, 89, 249, 1) 27%,
-    rgba(79, 42, 157, 1) 80%,
-    rgba(45, 14, 103, 1) 100%
+    var(--purple-heart-400) 15%,
+    var(--purple-heart-800) 60%,
+    var(--purple-heart-950) 100%
   );
 }

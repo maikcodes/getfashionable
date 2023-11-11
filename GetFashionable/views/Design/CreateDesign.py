@@ -20,8 +20,9 @@ class CreateDesign(CreateView):
     context = {}
 
     def get(self, request):
+        form = self.form_class()
         self.context = {
-            'form': self.form_class,
+            'form': form,
             'show_header': True,
         }
         return render(request, self.template_name, self.context)

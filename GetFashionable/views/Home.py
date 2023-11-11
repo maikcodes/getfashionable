@@ -2,7 +2,6 @@ from django.db.models import F, ExpressionWrapper, fields
 from django.shortcuts import render
 from django.views import View
 
-from ..mocks import get_mocked_images
 from ..models import Design
 
 
@@ -20,7 +19,6 @@ class Home(View):
                 'url': image.image.url or '',
                 'id': image.id
             }
-            print(f'\n{image_info}\n')
 
             image_info_list.append(image_info)
 
