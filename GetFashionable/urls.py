@@ -4,6 +4,7 @@ from .views import Home, Publications
 from .views import Profile
 from .views.Auth import SignUp, SignIn, SignOut
 from .views.Design import CreateDesign
+from .views.Collection import CreateCollection
 
 
 app_name = 'getfashionable'
@@ -13,6 +14,7 @@ urlpatterns = [
     path("login/", SignIn.as_view(), name="login"),
     path("logout/", SignOut.as_view(), name="logout"),
     path('designs/', CreateDesign.as_view(), name="designs"),
+    path('collections/', CreateCollection.as_view(), name="collections"),
     path('<int:id>/', Publications.publication_detail, name='publication_detail'),
     path('<str:username>/', Profile.as_view(), name="profile"),
 ]

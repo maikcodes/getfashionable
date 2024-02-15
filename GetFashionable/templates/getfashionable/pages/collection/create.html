@@ -1,0 +1,29 @@
+{% extends "getfashionable/layouts/base.html" %}
+
+{% load static %}
+
+{% block head_title %}
+Publish 
+{% endblock %}
+
+{% block content %}
+
+{% if user.is_authenticated %}
+
+<div class="horizontal-center">
+    <div class="border-container">
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.as_p }}
+            {{ formset.management_form }}
+            {% for form in formset %}
+                {{ form.as_p }}
+            {% endfor %}
+            <button type="submit">Create Collection</button>
+        </form>
+    </div>
+</div>
+
+{% endif %}
+
+{% endblock %}
