@@ -5,7 +5,7 @@
   height: 45px;
   border: 1.5px solid var(--purple-heart-500);
   border-radius: 50%;
-  box-shadow: 0 4px 6px var(--ship-gray-300);
+  box-shadow: 0 3px 6px var(--ship-gray-300);
 }
 
 .rounded-button-large {
@@ -15,7 +15,7 @@
   height: 80px;
   border: 1.5px solid var(--purple-heart-500);
   border-radius: 50%;
-  box-shadow: 0 4px 6px var(--ship-gray-300);
+  box-shadow: 0 3px 6px var(--ship-gray-300);
 }
 
 .rounded-button-primary {
@@ -26,7 +26,7 @@
   height: 45px;
   background-color: var(--purple-heart-500);
   border-radius: 50%;
-  box-shadow: 0 4px 6px var(--ship-gray-300);
+  box-shadow: 0 3px 6px var(--ship-gray-300);
   font-size: 30px;
   text-decoration: none;
   font-weight: bold;
