@@ -24,7 +24,8 @@ class Design(models.Model):
     image = models.ImageField(upload_to=image_path, null=False)
     image_width = models.PositiveIntegerField(default=200)
     image_height = models.PositiveIntegerField(default=200)
-
+    description = models.TextField(blank=True)
+    
     collection = models.ForeignKey(
         Collection, on_delete=models.CASCADE, blank=True, null=True)
 
