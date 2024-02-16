@@ -2,6 +2,11 @@
 
 {% load static %}
 
+{% block specific_style %}
+<link rel="stylesheet" href="{% static 'getfashionable/css/auth.css' %}">
+{% endblock %}
+
+
 {% block head_title %}
 Login
 {% endblock %}
@@ -9,46 +14,60 @@ Login
 
 {% block content %}
 
-<div class="background-color-container">
-    <div class="content-centered">
-        <div class="color-border-container">
+<div class="auth-content">
 
-            <form method="post">
+    <div>
 
-                {% csrf_token %}
+    </div>
 
-                {% for field in form %}
+    <div class="auth-content__form col col--center-horizontally">
+        <form method="post" class="col">
+            {% csrf_token %}
 
-                <div class="row">
+            {% for field in form %}
 
-                    <div class="form-label">
-                        {{ field.label_tag }}
-                    </div>
-
-                    <div class="form-input-text">
-                        {{ field }}
-                    </div>
-
-                    {% for error in field.errors %}
-                    <p class="form-errors">{{ error }}</p>
-                    {% endfor %}
-
+            <div>
+                <div class="form__label">
+                    {{ field.label_tag }}
                 </div>
 
+                <div class="form__input-text">
+                    {{ field }}
+                </div>
+
+                {% for error in field.errors %}
+                <p class="form__errors">{{ error }}</p>
                 {% endfor %}
 
+            </div>
 
-                <div class="row">
-                    <br />
-                    <div class="content-centered">
-                        <button class="button-primary" type="submit">Login</button>
-                    </div>
-                </div>
+            {% endfor %}
 
-            </form>
+            <button class="button-primary" type="submit">Login</button>
+        </form>
 
+        <div class="divider">
+            <span class="divider__text">OR</span>
+        </div>
+
+        <div class="row row--center-horizontally">
+            <a href="">
+                <img class="image-icon" src="{% static 'getfashionable/icons/google.svg' %}" alt="login with google">
+            </a>
+
+            <a href="">
+                <img class="image-icon" src="{% static 'getfashionable/icons/apple.svg' %}" alt="login with apple">
+            </a>
+        </div>
+
+        <div class="row row--center-horizontally">
+            <a href="" class="link--secondary">Forgot password?</a>
+        </div>
+
+        <div class="row row--center-horizontally">
+            <p>Don't have an account?
+                <a href="{% url 'getfashionable:signup' %}" class="link">Sign up</a>
+            </p>
         </div>
     </div>
-</div>
-
-{% endblock %}
+    {% endblock %}

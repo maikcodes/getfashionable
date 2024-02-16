@@ -1,9 +1,15 @@
 [class*="rounded-image-link"] {
   display: block;
   overflow: hidden;
-  border: 1.5px solid var(--purple-heart-500);
   border-radius: 50%;
+}
+
+.rounded-image-link--shadow {
   box-shadow: 0 3px 6px var(--ship-gray-300);
+}
+
+.rounded-image-link--border {
+  border: 1.5px solid var(--purple-heart-500);
 }
 
 .rounded-image-link {
@@ -12,8 +18,8 @@
 }
 
 .rounded-image-link--large {
-  width: 80px;
-  height: 80px;
+  width: 48px;
+  height: 48px;
 }
 
 [class*="rounded-button"] {
@@ -130,5 +136,10 @@
     padding: 10px 25px;
     border-radius: 25px;
     filter: drop-shadow(3px 5px 2px var(--ship-gray-300));
+  }
+
+  .rounded-image-link--large {
+    width: 80px;
+    height: 80px;
   }
 }

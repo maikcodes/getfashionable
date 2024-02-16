@@ -18,7 +18,8 @@ class Publications(View):
                     'name': f'{user.first_name} {user.last_name}',
                     'image_url': user_image.image.url,
                 },
-                'description': design.name,
+                'name': design.name,
+                'description': design.description,
                 'image': {
                     'height': design.image_height,
                     'width': design.image_width,

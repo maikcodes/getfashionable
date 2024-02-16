@@ -12,8 +12,8 @@
         <img src="{% static 'getfashionable/icons/add_design.svg' %}" alt="search icon" class="image-icon">
     </a>
 
-    <div class="content-centered">
-        <a href="{% url 'getfashionable:profile' user %}" class="rounded-image-link">
+    <div style="display: flex; flex-direction: row; align-items: center; justify-content: center;">
+        <a href="{% url 'getfashionable:profile' user %}" class="rounded-image-link rounded-image-link--shadow rounded-image-link--border">
             <img class="rounded-image" src="{{ user.userimage.image.url }}" alt="">
         </a>
 
