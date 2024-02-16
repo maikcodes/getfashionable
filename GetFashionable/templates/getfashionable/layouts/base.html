@@ -8,11 +8,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="{% static 'getfashionable/css/layouts.css' %}">
+    <link rel="stylesheet" href="{% static 'getfashionable/css/icons.css' %}">
     <link rel="stylesheet" href="{% static 'getfashionable/css/buttons.css' %}">
     <link rel="stylesheet" href="{% static 'getfashionable/css/cards.css' %}">
-    <link rel="stylesheet" href="{% static 'getfashionable/css/search_menu.css' %}">
+    <link rel="stylesheet" href="{% static 'getfashionable/css/navbar.css' %}">
     <link rel="stylesheet" href="{% static 'getfashionable/css/dropdown.css' %}">
     <link rel="stylesheet" href="{% static 'getfashionable/css/forms.css' %}">
+
     <link rel="icon" href="{% static 'getfashionable/icons/favicon.svg' %}" type="image/svg+xml">
     {% block specific_style %} {% endblock %}
 
@@ -27,9 +29,7 @@
 <body class="main-container">
     {% if show_header %}
 
-    <header>
-        {% include "getfashionable/layouts/header/header.html" %}
-    </header>
+    {% include "getfashionable/layouts/navbar/index.html" %}
 
     <main class="main-content">
 

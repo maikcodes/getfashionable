@@ -58,11 +58,13 @@
 .main-content {
   width: auto;
   height: auto;
+  margin-top: 50px;
 }
 
 .main-content-full {
   width: auto;
   height: 100vh;
+  margin-top: 50px;
 }
 
 [class*="col-"] {
@@ -115,6 +117,10 @@ body {
 
 /* Medium layout */
 @media only screen and (min-width: 768px) {
+  .main-content, .main-content-full{
+    margin-top: 60px;
+  }
+
   .row {
     width: 100%;
     display: table;
@@ -124,7 +130,8 @@ body {
 
 /* Large layout */
 @media only screen and (min-width: 1024px) {
-  body {
+  .main-content, .main-content-full {
+    margin-top: 70px;
   }
 }
 

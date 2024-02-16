@@ -1,0 +1,11 @@
+.image-icon {
+    width: 16px;
+    height: 16px;
+}
+
+@media only screen and (min-width: 768px) {
+    .image-icon {
+        width: 24px;
+        height: 24px;
+    }
+}
