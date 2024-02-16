@@ -26,22 +26,15 @@
 
 </head>
 
-<body class="main-container">
-    {% if show_header %}
+<body class="page-container">
+    <main class="{% if show_header %} main-content main-content--with-header {% else %} main-content {% endif %}">
+        {% if show_header %}
+        {% include "getfashionable/layouts/navbar/index.html" %}
+        {% endif %}
 
-    {% include "getfashionable/layouts/navbar/index.html" %}
-
-    <main class="main-content">
-
-        {% else %}
-
-        <main class="main-content-full">
-            {% endif %}
-            {% block content %} {% endblock %}
-        </main>
-
-        {% block specific_script %} {% endblock %}
-
+        {% block content %} {% endblock %}
+    </main>
+    {% block specific_script %} {% endblock %}
 </body>
 
 </html>
