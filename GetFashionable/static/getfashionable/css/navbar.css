@@ -30,6 +30,13 @@
   gap: 1em;
 }
 
+.navbar__user-options-auth {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1em;
+}
+
 .navbar__search-bar {
   display: none;
 }
@@ -66,12 +73,13 @@
 @media only screen and (min-width: 1024px) {
   .navbar {
     height: 70px;
+    gap: 2rem;
   }
 
   .navbar__search-bar {
     display: flex;
     flex-direction: row;
     align-items: center;
-    width: 35rem;
+    width: 40rem;
   }
 }
