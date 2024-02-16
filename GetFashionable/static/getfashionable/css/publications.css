@@ -7,7 +7,9 @@
 }
 
 .publication__image-container {
+  display: flex;
   width: 100%;
+  justify-content: center;
 }
 
 .publication__image {
