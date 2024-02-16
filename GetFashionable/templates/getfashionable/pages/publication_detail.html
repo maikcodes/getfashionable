@@ -11,47 +11,41 @@ Publication
 {% endblock %}
 
 {% block content %}
-<div class="horizontal-center">
-    <div class="publication-detail-container">
-        <div class="row">
+<div class="publication">
+    <div class="publication__image-container">
+        <div class="publication__image" style="max-width: {{ publication.image.width }}px;">
+            <img src="{{ publication.image.url }}" alt="{{ publication.description }}"
+                width="{{ publication.image.width }}" height="{{ publication.image.height}}">
+        </div>
+    </div>
 
-            <div class="col-8">
-                <div class="publication-image-container">
-                    <div class="content-centered">
-                        <img class="publication-image" src="{{ publication.image.url }}"
-                            alt="{{ publication.description }}" width="{{ publication.image.width }}"
-                            height="{{ publication.image.height}}">
-                    </div>
-                </div>
-            </div>
 
-            <div class="col-4">
-                <div class="border-container">
+    <div class="publication__profile-container">
+        <div class="publication__profile">
+            <div class="publication__profile-author">
+                <a href="{% url 'getfashionable:profile' publication.author.username %}"
+                    class="rounded-image-link--large">
+                    <img class="rounded-image" src="{{ publication.author.image_url }}" alt="" width="60" height="60">
+                </a>
 
-                    <div class="content-centered">
-                        <a href="{% url 'getfashionable:profile' publication.author.username %}" class="rounded-image-link--large">
-                            <img class="rounded-image" src="{{ publication.author.image_url }}" alt="" width="60"
-                                height="60">
+                <div class="publication__profile-author-link">
+                    <strong>
+                        <a href="{% url 'getfashionable:profile' publication.author.username %}">
+                            {{ publication.author.name }}
                         </a>
-                    </div>
-
-                    <div class="content-centered">
-                        <div class="publication-profile-link">
-                            <strong>
-                                <a href="{% url 'getfashionable:profile' publication.author.username %}">{{ publication.author.name }}</a>
-                            </strong>
-                        </div>
-                    </div>
-
-                    <div class="publication-description">
-                        <p>
-                            {{ publication.description }}
-                        </p>
-                    </div>
-
+                    </strong>
                 </div>
             </div>
 
+            <div class="publication__name">
+                <p>
+                    {{ publication.name }}
+                </p>
+            </div>
+
+            <div class="publication__description">
+                <p>{{ publication.description }}</p>
+            </div>
         </div>
     </div>
 </div>

@@ -2,6 +2,11 @@
 
 {% load static %}
 
+{% block specific_style %}
+<link rel="stylesheet" href="{% static 'getfashionable/css/auth.css' %}">
+{% endblock %}
+
+
 {% block head_title %}
 Signup
 {% endblock %}
@@ -9,76 +14,66 @@ Signup
 
 {% block content %}
 
-<div class="background-color-container">
+<div class="auth-content">
+  <div class="auth-content__form col col--center-horizontally">
+    <form method="post" class="col" enctype="multipart/form-data">
 
-  <div class="content-centered">
-    <div class="color-border-container">
+      {% csrf_token %}
 
-      <form method="post" enctype="multipart/form-data">
-
-        {% csrf_token %}
-
+      <div>
         {% for field in form %}
-
-        {% if not forloop.last %}
-
-        <div class="row">
-
-          <div class="col-4">
-            <div class="form-label">
-              {{ field.label_tag }}
-            </div>
+        {% if field.name != 'user_image' %}
+        <div>
+          <div class="form__label">
+            {{ field.label_tag }}
           </div>
 
-          <div class="col-8">
-            <div class="form-input-text">
-              {{ field }}
-            </div>
+          <div class="form__input-text">
+            {{ field }}
+          </div>
 
+          <ul>
             {% for error in field.errors %}
-            <p class="form-errors">{{ error }}</p>
+            <li class="form__errors">{{ error }}</li>
             {% endfor %}
-          </div>
+          </ul>
         </div>
-
         {% endif %}
-
-        {% if forloop.last %}
-
-        <div class="row">
-
-          <div class="col-4">
-            <div class="form-label">
-              {{ form.user_image.label_tag }}
-            </div>
-          </div>
-
-          <div class="col-8">
-            <div>
-              {{ form.user_image }}
-            </div>
-
-            {% for error in field.errors %}
-            <p class="form-errors">{{ error }}</p>
-            {% endfor %}
-          </div>
-        </div>
-
-        {% endif %}
-
         {% endfor %}
-        <div class="row">
-          <br />
-          <div class="content-centered">
-            <button class="button-primary" type="submit">Sign up</button>
-          </div>
+      </div>
+
+      <div class="row row--center-horizontally">
+        <div class="form__input-image">
+          <label for="id_user_image" class="form__input-image-label">
+            <img src="{% static 'getfashionable/icons/upload_file.svg' %}" alt="Upload icon"
+              class="form__input-image-icon">
+            <span>Drag and drop or click to upload</span>
+          </label>
+          <input type="file" name="user_image" id="id_user_image" accept="image/*">
         </div>
+      </div>
 
-      </form>
+      <button class="button-primary" type="submit">Sign up</button>
+    </form>
 
+    <div class="divider">
+      <span class="divider__text">OR</span>
+    </div>
+
+    <div class="row row--center-horizontally">
+      <a href="">
+        <img class="image-icon" src="{% static 'getfashionable/icons/google.svg' %}" alt="Sign up with Google">
+      </a>
+
+      <a href="">
+        <img class="image-icon" src="{% static 'getfashionable/icons/apple.svg' %}" alt="Sign up with Apple">
+      </a>
+    </div>
+
+    <div class="row row--center-horizontally">
+      <p>Already have an account?
+        <a href="{% url 'getfashionable:login' %}" class="link">Login</a>
+      </p>
     </div>
   </div>
-</div>
-
-
-{% endblock %}
+  {% endblock %}

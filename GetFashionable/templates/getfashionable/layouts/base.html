@@ -27,11 +27,11 @@
 </head>
 
 <body class="page-container">
-    <main class="{% if show_header %} main-content main-content--with-header {% else %} main-content {% endif %}">
-        {% if show_header %}
-        {% include "getfashionable/layouts/navbar/index.html" %}
-        {% endif %}
+    {% if show_header %}
+    {% include "getfashionable/layouts/navbar/index.html" %}
+    {% endif %}
 
+    <main class="{% if show_header %} main-content main-content--with-header {% else %} main-content {% endif %}">
         {% block content %} {% endblock %}
     </main>
     {% block specific_script %} {% endblock %}

@@ -1,6 +1,6 @@
 .image-gallery-container {
-  margin: 0;
-  padding: 0;
+  margin: 0px;
+  padding: 0px;
 }
 
 .image-gallery {
@@ -8,7 +8,7 @@
 }
 
 .image-item {
-  width: 135px;
+  width: 130px;
   height: auto;
   border-radius: 10px;
   background-color: var(--ship-gray-200);
@@ -29,9 +29,21 @@
   transform: scale(1.03);
 }
 
+@media only screen and (min-width: 375px) {
+  .image-item {
+    width: 160px;
+  }
+}
+
+@media only screen and (min-width: 425px) {
+  .image-item {
+    width: 180px;
+  }
+}
+
 @media only screen and (min-width: 768px) {
   .image-item {
-    width: 170px;
+    width: 160px;
   }
 }
 
