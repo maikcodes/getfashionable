@@ -3,13 +3,6 @@
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  background: linear-gradient(
-    125deg,
-    var(--purple-heart-400) 15%,
-    var(--purple-heart-800) 60%,
-    var(--purple-heart-950) 100%
-  );
-
   padding: 1rem;
 }
 

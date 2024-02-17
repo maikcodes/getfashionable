@@ -31,7 +31,7 @@
     {% include "getfashionable/layouts/navbar/index.html" %}
     {% endif %}
 
-    <main class="{% if show_header %} main-content main-content--with-header {% else %} main-content main-content--full {% endif %}">
+    <main class="{% if show_header %} main-content main-content--with-header {% else %} main-content main-content--full background-color-gradient {% endif %}">
         {% block content %} {% endblock %}
     </main>
     {% block specific_script %} {% endblock %}

@@ -6,79 +6,58 @@
 Publish design
 {% endblock %}
 
-
 {% block content %}
 
 {% if user.is_authenticated %}
-
-<div class="horizontal-center">
-    <div class="border-container">
-
-        <form method="post" enctype="multipart/form-data">
+<div class="form-container">
+    <div class="form__content">
+        <div class="row row--center-horizontally">
+            <h1 class="form__title">Publish new design</h1>
+        </div>
+        <form method="post" enctype="multipart/form-data" class="col">
 
             {% csrf_token %}
 
-            {% for field in form %}
-
-            {% if not forloop.last %}
-
-
-            <div class="row">
-
-                <div class="form-label">
-                    {{ field.label_tag }}
-                </div>
-
-                <div class="form-input-text">
-                    {{ field }}
-                </div>
-
-                {% for error in field.errors %}
-                <p class="form-errors">{{ error }}</p>
-                {% endfor %}
-
-            </div>
-
-            {% endif %}
-
-            {% if forloop.last %}
-
-            <br />
-            <div class="row">
-                <div class="col-4">
-                    <div class="form-label">
-                        {{ form.image.label_tag }}
-                    </div>
-                </div>
-
-                <div class="col-8">
+            <div class="rows-cols">
+                <div class="cols-6">
+                    {% for field in form %}
+                    {% if field.name != 'image' %}
                     <div>
-                        {{ form.image }}
-                    </div>
+                        <div class="form__label">
+                            {{ field.label_tag }}
+                        </div>
 
-                    {% for error in field.errors %}
-                    <p class="form-errors">{{ error }}</p>
+                        <div class="form__input-text">
+                            {{ field }}
+                        </div>
+
+                        <ul>
+                            {% for error in field.errors %}
+                            <li class="form__errors">{{ error }}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    {% endif %}
                     {% endfor %}
                 </div>
-            </div>
 
-            {% endif %}
-
-            {% endfor %}
-
-
-            <div class="row">
-                <br />
-                <div class="content-centered">
-                    <button class="button-primary" type="submit">Publish</button>
+                <div class="cols-6">
+                    <div class="form__input-image">
+                        <label for="id_image" class="form__input-image-label">
+                            <img src="{% static 'getfashionable/icons/upload_file.svg' %}" alt="Upload icon"
+                                class="form__input-image-icon">
+                            <span>Drag and drop or click to upload</span>
+                        </label>
+                        <input type="file" name="image" id="id_image" accept="image/*">
+                    </div>
                 </div>
             </div>
 
+            <div class="cols-12">
+                <button class="button-primary button-primary--full" type="submit">Publish</button>
+            </div>
         </form>
-
     </div>
 </div>
-
 {% endif %}
-
 {% endblock %}

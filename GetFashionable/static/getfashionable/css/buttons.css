@@ -106,6 +106,10 @@
   background-color: var(--purple-heart-500);
 }
 
+.button-primary--full {
+  width: 100%;
+}
+
 .button-primary:hover {
   background-color: var(--amethyst-500);
 }

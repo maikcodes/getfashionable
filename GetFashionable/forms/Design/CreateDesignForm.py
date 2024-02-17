@@ -7,4 +7,4 @@ class CreateDesignForm(forms.ModelForm):
 
     class Meta:
         model = Design
-        fields = ['name', 'image']
+        fields = ['name', 'description', 'image']
