@@ -88,6 +88,10 @@
   padding-inline: 1rem;
 }
 
+.main-content--full {
+  padding: 0px  ;
+}
+
 .main-content--with-header {
   margin-top: 50px;
 }
