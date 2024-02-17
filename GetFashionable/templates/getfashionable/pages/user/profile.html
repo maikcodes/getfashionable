@@ -11,51 +11,46 @@
 {% endblock %}
 
 {% block content %}
-<div class="horizontal-center">
-    <div class="card-color">
-        <div class="row">
-            <div class="col-5">
-                <div class="content-centered">
-                    <div class="image-rounded-container-xl">
-                        <img class="profile-image" src="{{ profile_user.image }}">
-                    </div>
-                </div>
-            </div>
-            <div class="col-7">
-                <div class="row">
-                    <p class="profile_text">{{ profile_user.username }}</p>
-                    <p class="profile_text">
-                        {{ profile_user.first_name }}
-                        {{ profile_user.last_name }}
-                    </p>
-                </div>
-            </div>
+
+<div class="profile-info">
+    <div class="row row--center-horizontally">
+        <div class="profile-image profile-image--large">
+            <img src="{{ profile_user.image }}">
         </div>
     </div>
+
+    <div class="row row--center-horizontally">
+        <div class="profile-info__user">
+            <p class="profile-info__user-username">{{ profile_user.username }}</p>
+            <p class="profile-info__user-names">
+                {{ profile_user.first_name }}
+                {{ profile_user.last_name }}
+            </p>
+        </div>
+    </div>
+
 </div>
 
-<div class="card-vertical-padding">
-    <div class="image-gallery-container">
-        <div class="image-gallery">
+<div class="image-gallery-container">
+    <div class="image-gallery">
 
-            {% if profile_user.designs|length == 0 %}
+        {% if profile_user.designs|length == 0 %}
 
-            <div class="horizontal-center">
-                <p>This user does not upload designs yet</p>
-            </div>
-
-            {% else %}
-
-            {% for image in profile_user.designs %}
-            <a href="{% url 'getfashionable:publication_detail' image.id %}">
-                <div class="image-item">
-                    <img src="{{ image.url }}" alt="Image" width="{{ image.width }}" height="{{ image.height }}">
-                </div>
-            </a>
-            {% endfor %}
-
-            {% endif %}
+        <div class="horizontal-center">
+            <p>This user does not upload designs yet</p>
         </div>
+
+        {% else %}
+
+        {% for image in profile_user.designs %}
+        <a href="{% url 'getfashionable:publication_detail' image.id %}">
+            <div class="image-item">
+                <img src="{{ image.url }}" alt="Image" width="{{ image.width }}" height="{{ image.height }}">
+            </div>
+        </a>
+        {% endfor %}
+
+        {% endif %}
     </div>
 </div>
 
