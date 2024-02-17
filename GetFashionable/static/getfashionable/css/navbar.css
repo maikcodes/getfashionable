@@ -5,7 +5,7 @@
   align-items: center;
   justify-content: center;
   gap: 1em;
-  background-color: #fff
+  background-color: var(--ship-gray-50);
 }
 
 .navbar--sticky {

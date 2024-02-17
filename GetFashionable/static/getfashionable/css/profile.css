@@ -10,7 +10,7 @@
   display: block;
   overflow: hidden;
   border-radius: 50%;
-  box-shadow: 0 4px 6px var(--ship-gray-50);
+  box-shadow: 0 3px 6px var(--ship-gray-300);
 }
 
 .profile-image img {
@@ -42,6 +42,7 @@
   font-size: 18px;
   color: var(--ship-gray-400);
   margin: 0px;
+  text-transform: capitalize;
 }
 
 @media (min-width: 768px) {

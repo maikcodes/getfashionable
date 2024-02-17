@@ -84,6 +84,7 @@
   width: auto;
   height: 100vh;
   max-width: 1366px;
+  padding-top: 5px;
   padding-inline: 1rem;
 }
 
