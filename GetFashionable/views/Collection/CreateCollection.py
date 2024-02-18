@@ -20,19 +20,27 @@ class CreateCollection(CreateView):
     context = {}
 
     def get(self, request):
+        fields = ['name', 'description']
         form = self.form_class()
         formset = DesignFormSet(queryset=Design.objects.none())
+
         self.context = {
             'form': form,
             'formset': formset,
             'show_header': True,
+            'fields': fields
         }
+
         return render(request, self.template_name, self.context)
 
     def post(self, request):
         form = self.form_class(request.POST)
         formset = DesignFormSet(
-            request.POST, request.FILES, queryset=Design.objects.none())
+            request.POST,
+            request.FILES,
+            queryset=Design.objects.none()
+        )
+
         if form.is_valid() and formset.is_valid():
             collection = form.save(commit=False)
             collection.user = request.user
@@ -43,9 +51,11 @@ class CreateCollection(CreateView):
                 design.user = request.user
                 design.save()
             return redirect(self.success_url)
+
         self.context = {
             'form': form,
             'formset': formset,
             'show_header': True,
+
         }
         return render(request, self.template_name, self.context)

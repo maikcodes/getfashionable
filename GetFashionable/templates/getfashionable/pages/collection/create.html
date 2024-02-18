@@ -3,27 +3,100 @@
 {% load static %}
 
 {% block head_title %}
-Publish 
+Publish
 {% endblock %}
 
 {% block content %}
-
 {% if user.is_authenticated %}
 
-<div class="horizontal-center">
-    <div class="border-container">
-        <form method="post" enctype="multipart/form-data">
+<div class="form-container">
+    <div class="form__content">
+        <div class="row row--center-horizontally">
+            <h1 class="form__title">Publish new collection</h1>
+        </div>
+        <form method="post" enctype="multipart/form-data" class="col">
+
             {% csrf_token %}
-            {{ form.as_p }}
-            {{ formset.management_form }}
-            {% for form in formset %}
-                {{ form.as_p }}
-            {% endfor %}
-            <button type="submit">Create Collection</button>
+
+            <div class="cols-12">
+                {% for field in form %} <div>
+                    <div class="form__label">
+                        {{ field.label_tag }}
+                    </div>
+
+                    <div class="form__input-text">
+                        {{ field }}
+                    </div>
+
+                    <ul>
+                        {% for error in field.errors %}
+                        <li class="form__errors">{{ error }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                {% endfor %}
+                {{ formset.management_form }}
+            </div>
+
+            <div class="row row--center-horizontally">
+                <h2 class="form__subtitle">Add designs</h2>
+            </div>
+
+            <div class="rows-cols" id="formsetContainer">
+                {% for form in formset %}
+                <div class="cols-6">
+                    {% for field in form %}
+
+                    <div>
+                        {% if field.name in fields %}
+                        <div class="form__label">
+                            {{ field.label_tag }}
+                        </div>
+
+                        <div class="form__input-text">
+                            {{ field }}
+                        </div>
+
+                        <ul>
+                            {% for error in field.errors %}
+                            <li class="form__errors">{{ error }}</li>
+                            {% endfor %}
+                        </ul>
+                        {% elif field.name != 'image' %}
+                        {{ field }}
+                        {% endif %}
+                    </div>
+
+                    {% endfor %}
+                </div>
+
+                <div class="cols-6">
+                    <div class="form__input-image form__input-image--full">
+                        <label for="id_design_set-{{ forloop.counter0 }}-image" class="form__input-image-label">
+                            <img src="{% static 'getfashionable/icons/upload_file.svg' %}" alt="Upload icon"
+                                class="form__input-image-icon">
+                            <span>Drag and drop or click to upload</span>
+                        </label>
+                        <input type="file" name="design_set-{{ forloop.counter0 }}-image"
+                            id="id_design_set-{{ forloop.counter0 }}-image" accept="image/*">
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+
+
+            <div class="col-12">
+                <button type="button" id="addDesign" name="addDesign" class="button-primary button-primary--full">Add
+                    design</button>
+            </div>
+
+            <div class="cols-12">
+                <button class="button-primary button-primary--full" type="submit">Publish collection</button>
+            </div>
         </form>
     </div>
 </div>
 
-{% endif %}
 
+{% endif %}
 {% endblock %}
